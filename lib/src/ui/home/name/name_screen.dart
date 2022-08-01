@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tasbeh/dialog/bottom_dialog.dart';
 import 'package:tasbeh/model/colors/colors.dart';
 import 'package:tasbeh/model/name/name_model.dart';
 
@@ -13,7 +12,6 @@ class NameScreen extends StatefulWidget {
 class _NameScreenState extends State<NameScreen> {
   PageController? controller;
   int currentIndex = 0;
-
   @override
   initState() {
     super.initState();
@@ -36,17 +34,6 @@ class _NameScreenState extends State<NameScreen> {
         centerTitle: true,
         title: const Text('Allohni 99 ismi'),
         backgroundColor: AppColor.green,
-        actions: [
-          IconButton(
-            onPressed: (){
-              BottomDilaog.musicDialog(context);
-            },
-            icon: const Icon(Icons.play_circle),
-          ),
-          const SizedBox(
-            width: 16,
-          )
-        ],
       ),
       body: Stack(
         children: [

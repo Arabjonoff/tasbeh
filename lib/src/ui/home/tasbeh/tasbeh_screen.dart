@@ -80,6 +80,5 @@ class _TasbehScreenState extends State<TasbehScreen> {
           ),
         ],
       ),
-    );
-  }
+    );}
 }

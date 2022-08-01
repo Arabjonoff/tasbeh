@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:just_audio/just_audio.dart';
 import 'package:tasbeh/model/colors/colors.dart';
 
 class BottomDilaog {
    static void musicDialog(BuildContext context) {
-    final player = AudioPlayer();
     Duration duration = Duration.zero;
     Duration position = Duration.zero;
     bool isPlaying = false;
@@ -50,10 +48,7 @@ class BottomDilaog {
                 child: IconButton(
                   color: AppColor.white,
                   icon: isPlaying ? Icon(Icons.pause) : Icon(Icons.play_arrow),
-                  onPressed: ()async {
-                    await player.setUrl(
-                        'https://s3.amazonaws.com/scifri-episodes/scifri20181123-episode.mp3');
-                  },
+                  onPressed: ()async {},
                 ),
               )
             ],

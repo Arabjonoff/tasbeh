@@ -1,11 +1,12 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:slide_digital_clock/slide_digital_clock.dart';
 import 'package:tasbeh/model/colors/colors.dart';
-import 'package:tasbeh/model/image/image_model.dart';
-import 'package:tasbeh/src/ui/kalima/kalima_screen.dart';
-import 'package:tasbeh/src/ui/makka/makka_live_screen.dart';
-import 'package:tasbeh/src/ui/name/name_screen.dart';
-import 'package:tasbeh/src/ui/tasbeh/tasbeh_screen.dart';
+import 'package:tasbeh/src/ui/home/kalima/kalima_screen.dart';
+import 'package:tasbeh/src/ui/home/makka/makka_live_screen.dart';
+import 'package:tasbeh/src/ui/home/masjid/masjid_screen.dart';
+import 'package:tasbeh/src/ui/home/tasbeh/tasbeh_screen.dart';
+
+import 'name/name_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -52,7 +53,27 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 child: Row(
                   children: [
+                    Expanded(child: Container(
 
+                    ),),
+                    // DigitalClock(
+                    //   is24HourTimeFormat: true,
+                    //   showSecondsDigit: true,
+                    //   areaWidth: 150,
+                    //   areaHeight: 150,
+                    //   areaAligment: AlignmentDirectional.center,
+                    //   areaDecoration: BoxDecoration(
+                    //     color: AppColor.green,
+                    //     borderRadius: BorderRadius.circular(100),
+                    //   ),
+                    //   hourMinuteDigitDecoration: BoxDecoration(
+                    //     border: Border.all(color: Colors.transparent,),
+                    //   ),
+                    //   secondDigitDecoration: BoxDecoration(
+                    //     border: Border.all(color: Colors.transparent,),
+                    //   ),
+                    // ),
+                    const SizedBox(width: 16,),
                   ],
                 ),
               ),
@@ -115,7 +136,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           context,
                           MaterialPageRoute(
                             builder: (context) {
-                              return  NameScreen();
+                              return NameScreen();
                             },
                           ),
                         );
@@ -164,12 +185,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   Expanded(
                     child: GestureDetector(
-                      onTap: (){
+                      onTap: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
                             builder: (context) {
-                              return  KalimaScreen();
+                              return KalimaScreen();
                             },
                           ),
                         );
@@ -192,8 +213,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             const Spacer(),
                             const Text(
                               'Kalima',
-                              style:
-                                  TextStyle(fontSize: 18, color: AppColor.green),
+                              style: TextStyle(
+                                  fontSize: 18, color: AppColor.green),
                             ),
                             const SizedBox(
                               height: 8,
@@ -258,31 +279,44 @@ class _HomeScreenState extends State<HomeScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Container(
-                    width: MediaQuery.of(context).size.width / 2.2,
-                    height: 150,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: AppColor.white,
-                    ),
-                    child: Column(
-                      children: [
-                        const SizedBox(
-                          height: 8,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return MosqueScreen();
+                          },
                         ),
-                        Image.asset(
-                          'assets/icons/kaaba.png',
-                          width: 100,
-                        ),
-                        const Spacer(),
-                        const Text(
-                          'Makka online',
-                          style: TextStyle(fontSize: 18, color: AppColor.green),
-                        ),
-                        const SizedBox(
-                          height: 8,
-                        ),
-                      ],
+                      );
+                    },
+                    child: Container(
+                      width: MediaQuery.of(context).size.width / 2.2,
+                      height: 150,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: AppColor.white,
+                      ),
+                      child: Column(
+                        children: [
+                          const SizedBox(
+                            height: 8,
+                          ),
+                          Image.asset(
+                            'assets/icons/masjid.png',
+                            width: 100,
+                          ),
+                          const Spacer(),
+                          const Text(
+                            'Masjidlar',
+                            style:
+                                TextStyle(fontSize: 18, color: AppColor.green),
+                          ),
+                          const SizedBox(
+                            height: 8,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
