@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:tasbeh/model/colors/colors.dart';
 import 'package:tasbeh/model/image/image_model.dart';
+import 'package:tasbeh/src/ui/kalima/kalima_screen.dart';
 import 'package:tasbeh/src/ui/makka/makka_live_screen.dart';
 import 'package:tasbeh/src/ui/name/name_screen.dart';
 import 'package:tasbeh/src/ui/tasbeh/tasbeh_screen.dart';
@@ -39,36 +40,21 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(
                 height: 20,
               ),
-              CarouselSlider(
-                options: CarouselOptions(
-                  height: 200,
-                  viewportFraction: 1,
-                  initialPage: 0,
-                  enableInfiniteScroll: true,
-                  reverse: false,
-                  autoPlay: true,
-                  autoPlayInterval: const Duration(seconds: 7),
-                  autoPlayAnimationDuration: const Duration(milliseconds: 800),
-                  autoPlayCurve: Curves.easeOutSine,
-                  scrollDirection: Axis.horizontal,
+              Container(
+                height: 200,
+                width: MediaQuery.of(context).size.width,
+                margin: const EdgeInsets.symmetric(
+                  horizontal: 20,
                 ),
-                items: images.map((i) {
-                  return Builder(
-                    builder: (BuildContext context) {
-                      return Container(
-                        width: MediaQuery.of(context).size.width,
-                        margin: const EdgeInsets.symmetric(
-                          horizontal: 20,
-                        ),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: AppColor.white,
-                        ),
-                        child: Image.asset(i),
-                      );
-                    },
-                  );
-                }).toList(),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: AppColor.white,
+                ),
+                child: Row(
+                  children: [
+
+                  ],
+                ),
               ),
               const SizedBox(
                 height: 20,
@@ -177,31 +163,43 @@ class _HomeScreenState extends State<HomeScreen> {
                     width: 20,
                   ),
                   Expanded(
-                    child: Container(
-                      height: 150,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: AppColor.white,
-                      ),
-                      child: Column(
-                        children: [
-                          const SizedBox(
-                            height: 8,
+                    child: GestureDetector(
+                      onTap: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return  KalimaScreen();
+                            },
                           ),
-                          Image.asset(
-                            'assets/icons/ramadan2.png',
-                            width: 100,
-                          ),
-                          const Spacer(),
-                          const Text(
-                            'Kalima',
-                            style:
-                                TextStyle(fontSize: 18, color: AppColor.green),
-                          ),
-                          const SizedBox(
-                            height: 8,
-                          ),
-                        ],
+                        );
+                      },
+                      child: Container(
+                        height: 150,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: AppColor.white,
+                        ),
+                        child: Column(
+                          children: [
+                            const SizedBox(
+                              height: 8,
+                            ),
+                            Image.asset(
+                              'assets/icons/ramadan2.png',
+                              width: 100,
+                            ),
+                            const Spacer(),
+                            const Text(
+                              'Kalima',
+                              style:
+                                  TextStyle(fontSize: 18, color: AppColor.green),
+                            ),
+                            const SizedBox(
+                              height: 8,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
