@@ -49,31 +49,95 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: AppColor.white,
                 ),
                 child: Row(
                   children: [
-                    Expanded(child: Container(
-
-                    ),),
-                    // DigitalClock(
-                    //   is24HourTimeFormat: true,
-                    //   showSecondsDigit: true,
-                    //   areaWidth: 150,
-                    //   areaHeight: 150,
-                    //   areaAligment: AlignmentDirectional.center,
-                    //   areaDecoration: BoxDecoration(
-                    //     color: AppColor.green,
-                    //     borderRadius: BorderRadius.circular(100),
-                    //   ),
-                    //   hourMinuteDigitDecoration: BoxDecoration(
-                    //     border: Border.all(color: Colors.transparent,),
-                    //   ),
-                    //   secondDigitDecoration: BoxDecoration(
-                    //     border: Border.all(color: Colors.transparent,),
-                    //   ),
-                    // ),
-                    const SizedBox(width: 16,),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                     Row(
+                       children: [
+                         Container(
+                           width: 20,
+                           height: 20,
+                           decoration: BoxDecoration(
+                             borderRadius: BorderRadius.circular(50),
+                             color: AppColor.green,
+                           ),
+                         ),
+                         const SizedBox(width: 8,),
+                         const Text('2022 Avgust',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 20),),
+                       ],
+                     ),
+                          Container(
+                            margin: const EdgeInsets.only(left: 7),
+                            height: 40,
+                            width: 5,
+                            color: AppColor.green,
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                width: 20,
+                                height: 20,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(50),
+                                  color: AppColor.green,
+                                ),
+                              ),
+                              const SizedBox(width: 8,),
+                              const Text('Hijriy 1444',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 20),),
+                            ],
+                          ),
+                          Container(
+                            margin: const EdgeInsets.only(left: 7),
+                            height: 40,
+                            width: 5,
+                            color: AppColor.green,
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                width: 20,
+                                height: 20,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(50),
+                                  color: AppColor.green,
+                                ),
+                              ),
+                              const SizedBox(width: 8,),
+                              Text('Muxarram oyi',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 20),),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    DigitalClock(
+                      is24HourTimeFormat: true,
+                      showSecondsDigit: true,
+                      areaWidth: 150,
+                      areaHeight: 150,
+                      areaAligment: AlignmentDirectional.center,
+                      areaDecoration: BoxDecoration(
+                        color: AppColor.green,
+                        borderRadius: BorderRadius.circular(100),
+                      ),
+                      hourMinuteDigitDecoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.transparent,
+                        ),
+                      ),
+                      secondDigitDecoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.transparent,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 16,
+                    ),
                   ],
                 ),
               ),
