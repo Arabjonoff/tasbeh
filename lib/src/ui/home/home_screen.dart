@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:slide_digital_clock/slide_digital_clock.dart';
 import 'package:tasbeh/model/colors/colors.dart';
 import 'package:tasbeh/src/ui/home/kalima/kalima_screen.dart';
@@ -48,10 +49,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   horizontal: 20,
                 ),
                 decoration: BoxDecoration(
+                  color: AppColor.white,
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Row(
                   children: [
+                    const SizedBox(
+                      width: 8,
+                    ),
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -68,7 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
                            ),
                          ),
                          const SizedBox(width: 8,),
-                         const Text('2022 Avgust',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 20),),
+                          Text(DateFormat.y().format(DateTime.now()),style: TextStyle(fontWeight: FontWeight.w500,fontSize: 20),),
                        ],
                      ),
                           Container(
@@ -136,7 +141,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     const SizedBox(
-                      width: 16,
+                      width: 8,
                     ),
                   ],
                 ),
